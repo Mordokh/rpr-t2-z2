@@ -4,21 +4,18 @@ public class Interval {
     private double start, end;
     private boolean pristart, priend;
 
+
     public Interval (double x, double y, boolean prix, boolean priy){
-        try{
-            if (x>y) {
-                throw new IllegalArgumentException("Pocetna tack ne moze biti veca od krajnje");
-            }
-            else{
-                start=x;
-                end=y;
-                pristart=prix;
-                priend=priy;
-            }
+        if (x>y) {
+            throw new IllegalArgumentException();
         }
-        catch(IllegalArgumentException e){
-            System.out.println(e.getMessage());
+        else{
+            start=x;
+            end=y;
+            pristart=prix;
+            priend=priy;
         }
+
     }
 
     public Interval(){
@@ -121,8 +118,22 @@ public class Interval {
     }
 
     @Override
-    public boolean equals(){
+    public boolean equals(Object o){
+        if (o==this){
+            return true;
+        }
+        if (!(o instanceof Interval)){
+            return false;
+        }
+        Interval test=(Interval) o;
 
+        if (start==test.start && end==test.end && pristart==test.pristart && priend==test.priend){
+            return true;
+        }
+
+        else{
+            return false;
+        }
     }
 
 }
