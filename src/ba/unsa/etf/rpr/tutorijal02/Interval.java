@@ -136,4 +136,35 @@ public class Interval {
         }
     }
 
+    public double getStart() {
+        return start;
+    }
+
+    public void setStart(double start) {
+        this.start = start;
+    }
+
+    public double getEnd() {
+        return end;
+    }
+
+    public void setEnd(double end) {
+        this.end = end;
+    }
+
+    public boolean isPristart() {
+        return pristart;
+    }
+
+    public void setPristart(boolean pristart) {
+        this.pristart = pristart;
+    }
+
+    public boolean isPriend() {
+        return priend;
+    }
+
+    public void setPriend(boolean priend) {
+        this.priend = priend;
+    }
 }
